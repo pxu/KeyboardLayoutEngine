@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00FAA7EC280B13D71F901C8A858C312A"
+               BlueprintIdentifier = "72EFD4C0528C676C25306F5C3B2964DA"
                BuildableName = "Pods_KeyboardLayoutEngineUITests.framework"
                BlueprintName = "Pods-KeyboardLayoutEngineUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "00FAA7EC280B13D71F901C8A858C312A"
+            BlueprintIdentifier = "72EFD4C0528C676C25306F5C3B2964DA"
             BuildableName = "Pods_KeyboardLayoutEngineUITests.framework"
             BlueprintName = "Pods-KeyboardLayoutEngineUITests"
             ReferencedContainer = "container:Pods.xcodeproj">

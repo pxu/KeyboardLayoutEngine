@@ -13,6 +13,8 @@ import UIKit
   @objc optional func customKeyboard(_ customKeyboard: CustomKeyboard, keyboardButtonPressed keyboardButton: KeyboardButton)
   @objc optional func customKeyboard(_ customKeyboard: CustomKeyboard, keyButtonPressed key: String)
   @objc optional func customKeyboardSpaceButtonPressed(_ customKeyboard: CustomKeyboard)
+  @objc optional func customKeyboardLeftArrowButtonPressed(_ customKeyboard: CustomKeyboard)
+  @objc optional func customKeyboardRightArrowButtonPressed(_ customKeyboard: CustomKeyboard)
   @objc optional func customKeyboardBackspaceButtonPressed(_ customKeyboard: CustomKeyboard)
   @objc optional func customKeyboardGlobeButtonPressed(_ customKeyboard: CustomKeyboard)
   @objc optional func customKeyboardReturnButtonPressed(_ customKeyboard: CustomKeyboard)
@@ -293,6 +295,10 @@ open class CustomKeyboard: UIView, KeyboardLayoutDelegate {
         delegate?.customKeyboardBackspaceButtonPressed?(self)
       case .Space:
         delegate?.customKeyboardSpaceButtonPressed?(self)
+      case .LeftArrow:
+        delegate?.customKeyboardLeftArrowButtonPressed?(self)
+      case .RightArrow:
+        delegate?.customKeyboardRightArrowButtonPressed?(self)
       case .Globe:
         delegate?.customKeyboardGlobeButtonPressed?(self)
       case .Return:

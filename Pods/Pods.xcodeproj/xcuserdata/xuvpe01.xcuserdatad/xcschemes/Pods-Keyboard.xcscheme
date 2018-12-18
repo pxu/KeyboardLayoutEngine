@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "36F46FCC52674D2BCA61E373388DC87F"
-               BuildableName = "Pods_KeyboardLayoutEngineTests.framework"
-               BlueprintName = "Pods-KeyboardLayoutEngineTests"
+               BlueprintIdentifier = "B373D590CC3BAA979B49D73918DC5C39"
+               BuildableName = "Pods_Keyboard.framework"
+               BlueprintName = "Pods-Keyboard"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "36F46FCC52674D2BCA61E373388DC87F"
-            BuildableName = "Pods_KeyboardLayoutEngineTests.framework"
-            BlueprintName = "Pods-KeyboardLayoutEngineTests"
+            BlueprintIdentifier = "B373D590CC3BAA979B49D73918DC5C39"
+            BuildableName = "Pods_Keyboard.framework"
+            BlueprintName = "Pods-Keyboard"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

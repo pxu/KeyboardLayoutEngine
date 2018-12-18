@@ -2,21 +2,21 @@ PODS:
   - Shadow (0.2)
 
 DEPENDENCIES:
-  - Shadow (from `https://github.com/cemolcay/Shadow.git`, branch `Swift3.0`)
+  - Shadow (from `https://github.com/pxu/Shadow.git`, branch `Swift3.0`)
 
 EXTERNAL SOURCES:
   Shadow:
     :branch: Swift3.0
-    :git: https://github.com/cemolcay/Shadow.git
+    :git: https://github.com/pxu/Shadow.git
 
 CHECKOUT OPTIONS:
   Shadow:
     :commit: c1c5142bf6e407e3c26eae68a155720b07a978d2
-    :git: https://github.com/cemolcay/Shadow.git
+    :git: https://github.com/pxu/Shadow.git
 
 SPEC CHECKSUMS:
   Shadow: 0fd870dd3de3ec5226315203f25ba54453547060
 
-PODFILE CHECKSUM: c17f6cbb82fb3c4e85ff4939a41e034eeafcf95e
+PODFILE CHECKSUM: 1941829bc00d9792c46371c4023985eb8e4643fe
 
 COCOAPODS: 1.5.3

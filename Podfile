@@ -16,5 +16,5 @@ target 'KeyboardLayoutEngineUITests' do
 end
 
 target 'Keyboard' do
-  pod 'Shadow', :git => 'https://github.com/cemolcay/Shadow.git', :branch => 'Swift3.0'
+  pod 'Shadow', :git => 'https://github.com/pxu/Shadow.git', :branch => 'Swift3.0'
 end

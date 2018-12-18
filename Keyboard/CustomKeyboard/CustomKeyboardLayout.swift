@@ -14,6 +14,8 @@ public var CustomKeyboardLayoutStyle = KeyboardLayoutStyle()
 // MARK: - Row Style
 public var CustomKeyboardRowStyle = KeyboardRowStyle()
 public var CustomKeyboardFirstRowStyle = KeyboardRowStyle(topPadding: 10, topPaddingLandscape: 6)
+public var CustomKeyboardNumbersRowStyle = KeyboardRowStyle(topPadding: 10, topPaddingLandscape: 6)
+public var CustomKeyboardSymbosRowStyle = KeyboardRowStyle(topPadding: 5, topPaddingLandscape: 3)
 
 public var CustomKeyboardSecondRowStyle = KeyboardRowStyle(
   leadingPadding: 22,
@@ -46,6 +48,8 @@ public var CustomKeyboardLowercaseLeftKeyButtonStyle = KeyboardButtonStyle(textO
 public var CustomKeyboardLowercaseRightKeyButtonStyle = KeyboardButtonStyle(textOffsetY: -2, keyPopType: .right)
 
 public var CustomKeyboardSpaceButtonStyle = KeyboardButtonStyle(font: UIFont.systemFont(ofSize: 15))
+public var CustomKeyboardLeftArrowButtonStyle = KeyboardButtonStyle(font: UIFont.systemFont(ofSize: 15))
+public var CustomKeyboardRightArrowButtonStyle = KeyboardButtonStyle(font: UIFont.systemFont(ofSize: 15))
 public var CustomKeyboardBackspaceButtonStyle = KeyboardButtonStyle(
   backgroundColor: UIColor(red: 172.0/255.0, green: 179.0/255.0, blue: 188.0/255.0, alpha: 1),
   imageSize: 20)
@@ -66,26 +70,16 @@ public var CustomKeyboardNumbersButtonStyle = KeyboardButtonStyle(
   backgroundColor: UIColor(red: 172.0/255.0, green: 179.0/255.0, blue: 188.0/255.0, alpha: 1),
   font: UIFont.systemFont(ofSize: 15))
 
-let dotButton = KeyboardButton(type: .key("."), style: CustomKeyboardKeyButtonStyle)
-let numbersRow = KeyboardRow(
-    style: CustomKeyboardFirstRowStyle,
-    characters: [
-        KeyboardButton(type: .key("1"), style: CustomKeyboardLeftKeyButtonStyle),
-        KeyboardButton(type: .key("2"), style: CustomKeyboardKeyButtonStyle),
-        KeyboardButton(type: .key("3"), style: CustomKeyboardKeyButtonStyle),
-        KeyboardButton(type: .key("4"), style: CustomKeyboardKeyButtonStyle),
-        KeyboardButton(type: .key("5"), style: CustomKeyboardKeyButtonStyle),
-        KeyboardButton(type: .key("6"), style: CustomKeyboardKeyButtonStyle),
-        KeyboardButton(type: .key("7"), style: CustomKeyboardKeyButtonStyle),
-        KeyboardButton(type: .key("8"), style: CustomKeyboardKeyButtonStyle),
-        KeyboardButton(type: .key("9"), style: CustomKeyboardKeyButtonStyle),
-        KeyboardButton(type: .key("0"), style: CustomKeyboardRightKeyButtonStyle),
-        ]
-)
+let LeftArrowChars = "<--"
+let RightArrowChars = "-->"
+
+
 
 // MARK: - Identifier
 public enum CustomKeyboardIdentifier: String {
   case Space = "Space"
+  case LeftArrow = "LeftArrow"
+  case RightArrow = "RightArrow"
   case Backspace = "Backspace"
   case Globe = "Globe"
   case Return = "Return"
@@ -109,7 +103,36 @@ open class CustomKeyboardLayout {
     uppercase = KeyboardLayout(
       style: CustomKeyboardLayoutStyle,
       rows: [
-        numbersRow,
+        KeyboardRow(
+            style: CustomKeyboardSymbosRowStyle,
+            characters: [
+                KeyboardButton(type: .key("!"), style: CustomKeyboardLeftKeyButtonStyle),
+                KeyboardButton(type: .key("@"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("#"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("$"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("%"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("^"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("&"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("*"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("("), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key(")"), style: CustomKeyboardRightKeyButtonStyle),
+                ]
+        ),
+        KeyboardRow(
+            style: CustomKeyboardNumbersRowStyle,
+            characters: [
+                KeyboardButton(type: .key("1"), style: CustomKeyboardLeftKeyButtonStyle),
+                KeyboardButton(type: .key("2"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("3"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("4"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("5"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("6"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("7"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("8"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("9"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("0"), style: CustomKeyboardRightKeyButtonStyle),
+                ]
+        ),
         KeyboardRow(
           style: CustomKeyboardFirstRowStyle,
           characters: [
@@ -192,6 +215,17 @@ open class CustomKeyboardLayout {
               type: .text("space"),
               style: CustomKeyboardSpaceButtonStyle,
               identifier: CustomKeyboardIdentifier.Space.rawValue),
+            KeyboardButton(type: .key(","), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(type: .key("."), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(type: .key("?"), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(
+                type: .text(LeftArrowChars),
+                style: CustomKeyboardLeftArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.LeftArrow.rawValue),
+            KeyboardButton(
+                type: .text(RightArrowChars),
+                style: CustomKeyboardRightArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.RightArrow.rawValue),
             KeyboardButton(
               type: .text("return"),
               style: CustomKeyboardReturnButtonStyle,
@@ -205,6 +239,36 @@ open class CustomKeyboardLayout {
     uppercaseToggled = KeyboardLayout(
       style: CustomKeyboardLayoutStyle,
       rows: [
+        KeyboardRow(
+            style: CustomKeyboardSymbosRowStyle,
+            characters: [
+                KeyboardButton(type: .key("!"), style: CustomKeyboardLeftKeyButtonStyle),
+                KeyboardButton(type: .key("@"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("#"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("$"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("%"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("^"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("&"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("*"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("("), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key(")"), style: CustomKeyboardRightKeyButtonStyle),
+                ]
+        ),
+        KeyboardRow(
+            style: CustomKeyboardNumbersRowStyle,
+            characters: [
+                KeyboardButton(type: .key("1"), style: CustomKeyboardLeftKeyButtonStyle),
+                KeyboardButton(type: .key("2"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("3"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("4"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("5"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("6"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("7"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("8"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("9"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("0"), style: CustomKeyboardRightKeyButtonStyle),
+                ]
+        ),
         KeyboardRow(
           style: CustomKeyboardFirstRowStyle,
           characters: [
@@ -287,6 +351,17 @@ open class CustomKeyboardLayout {
               type: .text("space"),
               style: CustomKeyboardSpaceButtonStyle,
               identifier: CustomKeyboardIdentifier.Space.rawValue),
+            KeyboardButton(type: .key(","), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(type: .key("."), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(type: .key("?"), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(
+                type: .text(LeftArrowChars),
+                style: CustomKeyboardLeftArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.LeftArrow.rawValue),
+            KeyboardButton(
+                type: .text(RightArrowChars),
+                style: CustomKeyboardRightArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.RightArrow.rawValue),
             KeyboardButton(
               type: .text("return"),
               style: CustomKeyboardReturnButtonStyle,
@@ -300,6 +375,36 @@ open class CustomKeyboardLayout {
     lowercase = KeyboardLayout(
       style: CustomKeyboardLayoutStyle,
       rows: [
+        KeyboardRow(
+            style: CustomKeyboardSymbosRowStyle,
+            characters: [
+                KeyboardButton(type: .key("!"), style: CustomKeyboardLeftKeyButtonStyle),
+                KeyboardButton(type: .key("@"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("#"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("$"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("%"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("^"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("&"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("*"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("("), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key(")"), style: CustomKeyboardRightKeyButtonStyle),
+                ]
+        ),
+        KeyboardRow(
+            style: CustomKeyboardNumbersRowStyle,
+            characters: [
+                KeyboardButton(type: .key("1"), style: CustomKeyboardLeftKeyButtonStyle),
+                KeyboardButton(type: .key("2"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("3"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("4"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("5"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("6"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("7"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("8"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("9"), style: CustomKeyboardKeyButtonStyle),
+                KeyboardButton(type: .key("0"), style: CustomKeyboardRightKeyButtonStyle),
+                ]
+        ),
         KeyboardRow(
           style: CustomKeyboardFirstRowStyle,
           characters: [
@@ -382,6 +487,17 @@ open class CustomKeyboardLayout {
               type: .text("space"),
               style: CustomKeyboardSpaceButtonStyle,
               identifier: CustomKeyboardIdentifier.Space.rawValue),
+            KeyboardButton(type: .key(","), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(type: .key("."), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(type: .key("?"), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(
+                type: .text(LeftArrowChars),
+                style: CustomKeyboardLeftArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.LeftArrow.rawValue),
+            KeyboardButton(
+                type: .text(RightArrowChars),
+                style: CustomKeyboardRightArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.RightArrow.rawValue),
             KeyboardButton(
               type: .text("return"),
               style: CustomKeyboardReturnButtonStyle,
@@ -474,6 +590,14 @@ open class CustomKeyboardLayout {
               style: CustomKeyboardSpaceButtonStyle,
               identifier: CustomKeyboardIdentifier.Space.rawValue),
             KeyboardButton(
+                type: .text(LeftArrowChars),
+                style: CustomKeyboardLeftArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.LeftArrow.rawValue),
+            KeyboardButton(
+                type: .text(RightArrowChars),
+                style: CustomKeyboardRightArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.RightArrow.rawValue),
+            KeyboardButton(
               type: .text("return"),
               style: CustomKeyboardReturnButtonStyle,
               width: .relative(percent: 0.18),
@@ -564,6 +688,15 @@ open class CustomKeyboardLayout {
               type: .text("space"),
               style: CustomKeyboardSpaceButtonStyle,
               identifier: CustomKeyboardIdentifier.Space.rawValue),
+            KeyboardButton(type: .key("."), style: CustomKeyboardKeyButtonStyle),
+            KeyboardButton(
+                type: .text(LeftArrowChars),
+                style: CustomKeyboardLeftArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.LeftArrow.rawValue),
+            KeyboardButton(
+                type: .text(RightArrowChars),
+                style: CustomKeyboardRightArrowButtonStyle,
+                identifier: CustomKeyboardIdentifier.RightArrow.rawValue),
             KeyboardButton(
               type: .text("return"),
               style: CustomKeyboardReturnButtonStyle,

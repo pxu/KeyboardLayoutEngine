@@ -91,6 +91,17 @@ class KeyboardViewController: UIInputViewController, CustomKeyboardDelegate {
     }
   }
 
+    func customKeyboardLeftArrowButtonPressed(_ customKeyboard: CustomKeyboard) {
+        if customKeyboard == self.customKeyboard {
+            textDocumentProxy.adjustTextPosition(byCharacterOffset: -1)
+        }
+    }
+    func customKeyboardRightArrowButtonPressed(_ customKeyboard: CustomKeyboard) {
+        if customKeyboard == self.customKeyboard {
+            textDocumentProxy.adjustTextPosition(byCharacterOffset: 1)
+        }
+    }
+
   func customKeyboardBackspaceButtonPressed(_ customKeyboard: CustomKeyboard) {
     if customKeyboard == self.customKeyboard {
       textDocumentProxy.deleteBackward()

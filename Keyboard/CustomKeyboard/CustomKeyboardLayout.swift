@@ -66,6 +66,23 @@ public var CustomKeyboardNumbersButtonStyle = KeyboardButtonStyle(
   backgroundColor: UIColor(red: 172.0/255.0, green: 179.0/255.0, blue: 188.0/255.0, alpha: 1),
   font: UIFont.systemFont(ofSize: 15))
 
+let dotButton = KeyboardButton(type: .key("."), style: CustomKeyboardKeyButtonStyle)
+let numbersRow = KeyboardRow(
+    style: CustomKeyboardFirstRowStyle,
+    characters: [
+        KeyboardButton(type: .key("1"), style: CustomKeyboardLeftKeyButtonStyle),
+        KeyboardButton(type: .key("2"), style: CustomKeyboardKeyButtonStyle),
+        KeyboardButton(type: .key("3"), style: CustomKeyboardKeyButtonStyle),
+        KeyboardButton(type: .key("4"), style: CustomKeyboardKeyButtonStyle),
+        KeyboardButton(type: .key("5"), style: CustomKeyboardKeyButtonStyle),
+        KeyboardButton(type: .key("6"), style: CustomKeyboardKeyButtonStyle),
+        KeyboardButton(type: .key("7"), style: CustomKeyboardKeyButtonStyle),
+        KeyboardButton(type: .key("8"), style: CustomKeyboardKeyButtonStyle),
+        KeyboardButton(type: .key("9"), style: CustomKeyboardKeyButtonStyle),
+        KeyboardButton(type: .key("0"), style: CustomKeyboardRightKeyButtonStyle),
+        ]
+)
+
 // MARK: - Identifier
 public enum CustomKeyboardIdentifier: String {
   case Space = "Space"
@@ -92,6 +109,7 @@ open class CustomKeyboardLayout {
     uppercase = KeyboardLayout(
       style: CustomKeyboardLayoutStyle,
       rows: [
+        numbersRow,
         KeyboardRow(
           style: CustomKeyboardFirstRowStyle,
           characters: [

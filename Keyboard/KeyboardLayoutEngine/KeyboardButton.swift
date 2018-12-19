@@ -231,7 +231,7 @@ open class KeyboardButton: UIView {
       x: contentX,
       y: 0,
       width: contentWidth,
-      height: frame.size.height * content.style.heightMultiplier)
+      height: frame.size.height * content.style.heightMultiplier*1.5)
     content.frame.origin.y = -(content.frame.size.height + padding)
 
     let bottomRect = CGRect(
